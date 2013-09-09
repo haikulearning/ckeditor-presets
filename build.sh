@@ -75,6 +75,12 @@ fi
 cd ../..
 
 echo ""
+echo "Removing Haiku's symlink for wsc plugin"
+wsc_symlink="ckeditor/plugins/wsc"
+[ -L $wsc_symlink ] && rm $wsc_symlink
+sleep 0.25
+
+echo ""
 echo "Copying extra plugins..."
 cp -r plugins/* ckeditor/plugins/
 
@@ -100,6 +106,13 @@ cp presets/README.md build/$1/ckeditor/
 echo "Removing added plugins..."
 cd ckeditor
 git clean -d -f -f
+
+echo "Removing wsc plugin manually and replacing with symlink"
+cd plugins
+rm -Rf wsc
+ln -s ../../plugins/wsc/ wsc
+cd ..
+
 cd ..
 
 
