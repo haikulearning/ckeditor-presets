@@ -1,10 +1,21 @@
-/**
- * @license Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.html or http://ckeditor.com/license
- */
-
-CKEDITOR.editorConfig = function( config ) {
-	// Define changes to default configuration here. For example:
-	// config.language = 'fr';
-	// config.uiColor = '#AADC6E';
+/************************ IMPORTANT *************************
+*
+* If you update this config file. PLEASE always increment
+* the CKEDITOR_VERSION_EXTENSION variable, which is set in
+* javascripts/ckeditor_haiku/ckeditor_haiku_setup.js
+*
+************************* IMPORTANT ************************/
+CKEDITOR.editorConfig = function( config )
+{
+    // Define changes to default configuration here.
+  config.customConfig = CKEDITOR.basePath + '../ckeditor_haiku/ckeditor_haiku_config.js';
+  try {
+    config.customConfig += CKEDITOR_VERSION_EXTENSION;
+  } catch(err) {
+    if(typeof errlog == 'function') {
+      errlog(err);
+    } else {
+      throw(err);
+    }
+  }
 };
