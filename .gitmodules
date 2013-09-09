@@ -1,6 +1,6 @@
 [submodule "ckeditor"]
 	path = ckeditor
-	url = git@github.com:ckeditor/ckeditor-dev.git
+	url = git@github.com:haikulearning/ckeditor-dev.git
 [submodule "plugins/wsc"]
 	path = plugins/wsc
 	url = git@github.com:WebSpellChecker/ckeditor-plugin-wsc.git
